@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Lista de Contatos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-searchbar (ionInput)="getContatos($event)"> </ion-searchbar>
+
+  <ion-list>
+
+    <ion-item *ngFor="let contatos of pessoa" (click)="detalhes(contatos)">
+
+      <ion-avatar slot="start">
+        <img src="../assets/icon/Goku_Icon.png">
+      </ion-avatar>
+
+      <h1> {{contatos.nome}} </h1>
+      
+      <p> {{contatos.telefone}} </p>
+     
+      <p> {{contatos.email}} </p>
+
+    </ion-item>
+   
+  </ion-list>
+
+</ion-content>
